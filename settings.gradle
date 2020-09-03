@@ -1,1 +1,3 @@
 rootProject.name = 'kodilla-course-spring'
+include 'kodilla-hibernate'
+
