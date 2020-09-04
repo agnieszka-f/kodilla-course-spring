@@ -9,13 +9,13 @@ import java.util.List;
         {
                 @NamedNativeQuery(
                         name = "Company.searchByThreeCharacters",
-                        query = "SELECT * FROM COMPANIES_ where COMPANY_NAME LIKE CONCAT(:THREE, '%')",
+                        query = "SELECT * FROM COM where COMPANY_NAME LIKE CONCAT(:THREE, '%')",
                         resultClass = Company.class
                 )
         }
 )
 @Entity
-@Table(name = "COMPANIES_")
+@Table(name = "COM")
 public class Company {
 
     private int id;
