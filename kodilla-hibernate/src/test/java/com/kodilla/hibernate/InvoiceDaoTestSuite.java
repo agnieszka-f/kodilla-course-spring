@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)
-@SpringBootTestgit status
+@SpringBootTest
 public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
