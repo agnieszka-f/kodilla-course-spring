@@ -1,4 +1,4 @@
-package com.kodilla.hibernate;
+/*package com.kodilla.hibernate;
 
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskDao;
@@ -96,4 +96,4 @@ public class TestTask {
         taskListDao.deleteAll();
         taskFinancialDetailsDao.deleteAll();
     }
-}
+}*/

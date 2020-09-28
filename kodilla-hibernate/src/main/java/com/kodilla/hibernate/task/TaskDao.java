@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.task;
+/*package com.kodilla.hibernate.task;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -14,3 +14,4 @@ public interface TaskDao extends CrudRepository<Task, Integer> {
     @Override
     long count();
 }
+*/

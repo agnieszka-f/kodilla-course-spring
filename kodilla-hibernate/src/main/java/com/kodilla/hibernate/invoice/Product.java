@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name="_product_")
+@Entity(name="_product__")
 public class Product {
     private int id;
     private String name;

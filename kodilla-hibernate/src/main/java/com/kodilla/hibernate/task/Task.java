@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.task;
+/*package com.kodilla.hibernate.task;
 
 import com.kodilla.hibernate.tasklist.TaskList;
 
@@ -78,4 +78,4 @@ public final class Task {
     public void setTaskList(TaskList taskList) {
         this.taskList = taskList;
     }
-}
+}*/

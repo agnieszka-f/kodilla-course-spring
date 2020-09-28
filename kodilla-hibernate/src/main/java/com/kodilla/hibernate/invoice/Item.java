@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
-@Entity(name="_item_")
+@Entity(name="_item__")
 public class Item {
     private int id;
     private Product product;

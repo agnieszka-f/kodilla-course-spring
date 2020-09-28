@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "_invoice_")
+@Entity(name = "_invoice__")
 public class Invoice {
     private int id;
     private String number;
