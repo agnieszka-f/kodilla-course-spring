@@ -9,13 +9,18 @@ import java.util.List;
         {
                 @NamedNativeQuery(
                         name = "Company.searchByThreeCharacters",
-                        query = "SELECT * FROM COM where COMPANY_NAME LIKE CONCAT(:THREE, '%')",
+                        query = "SELECT * FROM com where company_name LIKE CONCAT(:THREE, '%')",
+                        resultClass = Company.class
+                ),
+                @NamedNativeQuery(
+                        name="Company.searchByFragmentCompanyName" ,
+                        query = "SELECT * FROM com where company_name LIKE CONCAT('%', :FRG, '%')",
                         resultClass = Company.class
                 )
         }
 )
 @Entity
-@Table(name = "COM")
+@Table(name = "com")
 public class Company {
 
     private int id;
@@ -32,7 +37,7 @@ public class Company {
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name = "COMPANY_ID", unique = true)
+    @Column(name = "company_id", unique = true)
     public int getId() {
         return id;
     }
@@ -50,7 +55,7 @@ public class Company {
     }
 
     @NotNull
-    @Column(name = "COMPANY_NAME")
+    @Column(name = "company_name")
     public String getName() {
         return name;
     }
