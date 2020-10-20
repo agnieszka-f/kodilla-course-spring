@@ -10,12 +10,16 @@ import java.util.List;
                 @NamedQuery(
                         name = "Employee.searchByLastname",
                         query = "FROM Employee WHERE lastname = :LASTNAME"
+                ),
+                @NamedQuery(
+                       name = "Employee.searchByFragmentLastname",
+                        query = "FROM Employee WHERE lastname like CONCAT('%', :FRG, '%')"
                 )
         }
 )
 
 @Entity
-@Table(name="EMPLOYEES_")
+@Table(name="employees_")
 public class Employee {
     private int id;
     private String firstname;
@@ -30,7 +34,7 @@ public class Employee {
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name = "EMPLOYEE_ID", unique = true)
+    @Column(name = "employee_id", unique = true)
     public int getId() {
         return id;
     }
@@ -41,12 +45,12 @@ public class Employee {
 
     @ManyToMany (cascade = CascadeType.ALL)
     @JoinTable(
-            name = "JOIN_COMPANY_EMPLOYEE_",
+            name = "join_company_employee_",
             joinColumns = {
-                    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID")
+                    @JoinColumn(name = "employee_id", referencedColumnName = "employee_id")
             },
             inverseJoinColumns = {
-                    @JoinColumn(name = "COMPANY_ID", referencedColumnName = "COMPANY_ID")
+                    @JoinColumn(name = "company_id", referencedColumnName = "company_id")
             }
     )
     public List<Company> getCompanies() {
@@ -57,7 +61,7 @@ public class Employee {
         this.companies = companies;
     }
 
-    @Column(name = "FIRSTNAME")
+    @Column(name = "firstname")
     @NotNull
     public String getFirstname() {
         return firstname;
@@ -67,7 +71,7 @@ public class Employee {
         this.firstname = firstname;
     }
 
-    @Column(name = "LASTNAME")
+    @Column(name = "lastname")
     @NotNull
     public String getLastname() {
         return lastname;
