@@ -22,7 +22,7 @@ public class Facade {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Facade.class);
 
-    public void getCompanyByFragmentName(String fragment){
+    public List<Company> getCompanyByFragmentName(String fragment){
         List<Company> lists = companyDao.searchByFragmentCompanyName(fragment);
 
         if(!lists.isEmpty()) {
@@ -31,8 +31,10 @@ public class Facade {
                 System.out.println(c.getName());
             }
         }  else LOGGER.info("Nie znaleziono firm na zawierających w nazwie: " + fragment);
+
+        return lists;
     }
-    public void getEmployByFragmentLastame(String fragment){
+    public List<Employee> getEmployByFragmentLastame(String fragment){
         List<Employee> lists = employeeDao.searchByFragmentLastname(fragment);
 
         if(!lists.isEmpty()) {
@@ -41,5 +43,6 @@ public class Facade {
                 System.out.println(e.getFirstname() + " " + e.getLastname());
             }
         } else LOGGER.info("Nie znaleziono pracowników na podstawie fragmentu nazwiska: " + fragment);
+        return lists;
     }
 }

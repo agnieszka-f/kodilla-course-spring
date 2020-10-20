@@ -34,7 +34,9 @@ public class FacadeTestSuite {
         Company company3 = new Company("Ivona Software");
         companyDao.save(company3);
         //When
-        facade.getCompanyByFragmentName("oft");
+        List<Company> result = facade.getCompanyByFragmentName("oft");
+        //Then
+        Assert.assertEquals(2,result.size());
         //Clean
         companyDao.deleteAll();
     }
@@ -48,7 +50,9 @@ public class FacadeTestSuite {
         Employee employee3 = new Employee("Jonna", "Gąska");
         employeeDao.save(employee3);
         //When
-        facade.getEmployByFragmentLastame("owska");
+        List<Employee> result = facade.getEmployByFragmentLastame("owska");
+        //Then
+        Assert.assertEquals(2,result.size());
         //Clean
         employeeDao.deleteAll();
     }

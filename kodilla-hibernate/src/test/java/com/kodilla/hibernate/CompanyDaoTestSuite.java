@@ -16,12 +16,12 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
+   @Autowired
+   private CompanyDao companyDao;
     @Autowired
-    private CompanyDao companyDao;
-    @Autowired
-    private EmployeeDao employeeDao;
+   private EmployeeDao employeeDao;
 
-    @Test
+   @Test
     public void test1(){
         //Given
         Employee adamKowalski = new Employee("Adam","Kowalski");
@@ -50,11 +50,10 @@ public class CompanyDaoTestSuite {
 
         employeeDao.save(magdaNowacka);
         //When
-        List<Company> result = companyDao.searchByThreeCharacters("Sof");
+        List<Company> result = companyDao.searchByThreeCharacters("Soft");
         //Then
         Assert.assertEquals(2,result.size());
         //Clean
         employeeDao.delete(magdaNowacka);
-
     }
 }
