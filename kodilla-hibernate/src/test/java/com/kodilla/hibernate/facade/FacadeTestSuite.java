@@ -25,7 +25,7 @@ public class FacadeTestSuite {
     private Facade facade;
 
     @Test
-    public void test1(){
+    public void testShouldReturnCompaniesByNameFragment(){
         //Given
         Company company1 = new Company("Budimex Soft");
         companyDao.save(company1);
@@ -41,7 +41,7 @@ public class FacadeTestSuite {
         companyDao.deleteAll();
     }
     @Test
-    public void test2(){
+    public void testShouldReturnEmployeesByLastnameFragment(){
         //Given
         Employee employee1 = new Employee("Anna","Kotowska");
         employeeDao.save(employee1);
